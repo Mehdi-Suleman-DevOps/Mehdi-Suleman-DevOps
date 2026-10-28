@@ -88,6 +88,45 @@ I am **Mehdi Suleman**, a **Senior DevSecOps & Enterprise Infrastructure Automat
 | **FinOps & Cloud Economics** | Infracost, Azure Cost Management, Azure Policy (Deny/Audit), Reserved Instances |
 | **Observability & Telemetry** | Azure Monitor Agent (AMA), Log Analytics Workspace, KQL, Grafana, OpenTelemetry |
 
+<br/>
+
+### 🌟 Featured Enterprise Repositories
+
+<div align="center">
+  <table>
+    <tr>
+      <td width="50%" valign="top">
+        <h3 align="center">📦 <a href="https://github.com/Mehdi-Suleman-DevOps/terraform-azure-enterprise-modules">terraform-azure-enterprise-modules</a></h3>
+        <p align="center">
+          <img src="https://img.shields.io/badge/Terraform-%23844FBA.svg?style=flat-square&logo=terraform&logoColor=white" alt="Terraform"/>
+          <img src="https://img.shields.io/badge/Pattern-for__each%20%7C%20dynamic-00C853.svg?style=flat-square" alt="Patterns"/>
+          <img src="https://img.shields.io/badge/Azure-Landing%20Zones-0078D4.svg?style=flat-square" alt="Azure"/>
+        </p>
+        <p>
+          Production-grade, reusable Azure Terraform modules implementing advanced <code>for_each</code>, typed <code>map(object)</code>, and <code>dynamic</code> blocks for NSGs, VNets, Subnet delegations, and Key Vault.
+        </p>
+        <p align="center">
+          <a href="https://github.com/Mehdi-Suleman-DevOps/terraform-azure-enterprise-modules"><b>View Module Architecture ➔</b></a>
+        </p>
+      </td>
+      <td width="50%" valign="top">
+        <h3 align="center">🛡️ <a href="https://github.com/Mehdi-Suleman-DevOps/devsecops-enterprise-pipeline">devsecops-enterprise-pipeline</a></h3>
+        <p align="center">
+          <img src="https://img.shields.io/badge/Azure%20DevOps-%230078D7.svg?style=flat-square&logo=azuredevops&logoColor=white" alt="Azure DevOps"/>
+          <img src="https://img.shields.io/badge/Security-Shift--Left-00C853.svg?style=flat-square" alt="Shift Left"/>
+          <img src="https://img.shields.io/badge/FinOps-Infracost-FF6F00.svg?style=flat-square" alt="Infracost"/>
+        </p>
+        <p>
+          Production multi-stage DevSecOps pipeline template with GitLeaks secret scanning, Checkov IaC compliance, Trivy CVE scanning, Infracost budgeting, PIM gated approvals, and automated failure rollbacks.
+        </p>
+        <p align="center">
+          <a href="https://github.com/Mehdi-Suleman-DevOps/devsecops-enterprise-pipeline"><b>View Pipeline Template ➔</b></a>
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+
 <div align="center">
   <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Divider" />
 </div>
@@ -170,6 +209,8 @@ Microsoft CAF guides end-to-end cloud adoption across six iterative phases:
 <span id="terraform-automation"></span>
 ## 📦 08. Terraform Landing Zone Automation & Best Practices
 
+> 📦 **Live Production Repository:** Check out the complete modular architecture implementing `for_each`, `map(object)`, and `dynamic` blocks at [**`terraform-azure-enterprise-modules`**](https://github.com/Mehdi-Suleman-DevOps/terraform-azure-enterprise-modules).
+
 ### ⚙️ Production IaC Standards:
 - **Remote State Management:** Remote state stored in private Azure Storage Account with blob lease locking, encrypted at rest, and accessed via Least Privilege Managed Identities.
 - **Modularity:** Reusable, parameterized Terraform modules with strict semantic versioning (`v1.x.x`).
@@ -205,6 +246,8 @@ terraform-enterprise-landing-zone/
 
 <span id="devsecops-pipelines"></span>
 ## 🚀 09. Azure Repos & DevSecOps Pipelines
+
+> 🛡️ **Live Production Repository:** Check out the complete multi-stage YAML pipelines, test harness, and automated rollback scripts at [**`devsecops-enterprise-pipeline`**](https://github.com/Mehdi-Suleman-DevOps/devsecops-enterprise-pipeline).
 
 ### 🌿 Branching Strategy & Governance
 - **Trunk-Based Development** with short-lived feature branches (`feature/*`, `fix/*`).
