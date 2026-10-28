@@ -41,16 +41,9 @@
 
 ### 💻 Enterprise Terminal Session
 
-```bash
-mehdi@devops-control-plane:~$ neofetch --profile
-  ██████╗ ███████╗██╗   ██╗███████╗███████╗██████╗ ███████╗   OS       : Azure Linux Enterprise / Hardened Kernel
-  ██╔══██╗██╔════╝██║   ██║██╔════╝██╔════╝██╔══██╗██╔════╝   Engineer : Mehdi Suleman
-  ██║  ██║█████╗  ██║   ██║███████╗█████╗  ██║  ██║███████╗   Role     : Senior DevSecOps & Enterprise Automation Engineer
-  ██║  ██║██╔══╝  ╚██╗ ██╔╝╚════██║██╔══╝  ██║  ██║╚════██║   Specialty: Azure CAF Landing Zones | Terraform IaC | Zero-Trust
-  ██████╔╝███████╗ ╚████╔╝ ███████║███████╗██████╔╝███████║   DevSecOps: Shift-Left Gates (Checkov, Trivy, GitLeaks, PIM)
-  ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝╚══════╝╚═════╝ ╚══════╝   AIOps    : LLM Root-Cause Analysis | K8sGPT | Runbook RAG
-                                                               Status   : 🟢 99.99% SLA | Zero Unauthenticated Ingress
-```
+<div align="center">
+  <img src="./assets/terminal-session.svg" width="100%" alt="Enterprise Terminal Session" />
+</div>
 
 ---
 
