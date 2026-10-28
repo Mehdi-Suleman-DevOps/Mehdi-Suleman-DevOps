@@ -95,32 +95,43 @@ I am **Mehdi Suleman**, a **Senior DevSecOps & Enterprise Infrastructure Automat
 <div align="center">
   <table>
     <tr>
-      <td width="50%" valign="top">
+      <td width="33%" valign="top">
         <h3 align="center">📦 <a href="https://github.com/Mehdi-Suleman-DevOps/terraform-azure-enterprise-modules">terraform-azure-enterprise-modules</a></h3>
         <p align="center">
           <img src="https://img.shields.io/badge/Terraform-%23844FBA.svg?style=flat-square&logo=terraform&logoColor=white" alt="Terraform"/>
           <img src="https://img.shields.io/badge/Pattern-for__each%20%7C%20dynamic-00C853.svg?style=flat-square" alt="Patterns"/>
-          <img src="https://img.shields.io/badge/Azure-Landing%20Zones-0078D4.svg?style=flat-square" alt="Azure"/>
         </p>
         <p>
-          Production-grade, reusable Azure Terraform modules implementing advanced <code>for_each</code>, typed <code>map(object)</code>, and <code>dynamic</code> blocks for NSGs, VNets, Subnet delegations, and Key Vault.
+          Production-grade Azure Terraform modules implementing advanced <code>for_each</code>, typed <code>map(object)</code>, and <code>dynamic</code> blocks for NSGs, VNets, and Key Vault.
         </p>
         <p align="center">
-          <a href="https://github.com/Mehdi-Suleman-DevOps/terraform-azure-enterprise-modules"><b>View Module Architecture ➔</b></a>
+          <a href="https://github.com/Mehdi-Suleman-DevOps/terraform-azure-enterprise-modules"><b>View Modules ➔</b></a>
         </p>
       </td>
-      <td width="50%" valign="top">
+      <td width="33%" valign="top">
         <h3 align="center">🛡️ <a href="https://github.com/Mehdi-Suleman-DevOps/devsecops-enterprise-pipeline">devsecops-enterprise-pipeline</a></h3>
         <p align="center">
           <img src="https://img.shields.io/badge/Azure%20DevOps-%230078D7.svg?style=flat-square&logo=azuredevops&logoColor=white" alt="Azure DevOps"/>
-          <img src="https://img.shields.io/badge/Security-Shift--Left-00C853.svg?style=flat-square" alt="Shift Left"/>
-          <img src="https://img.shields.io/badge/FinOps-Infracost-FF6F00.svg?style=flat-square" alt="Infracost"/>
+          <img src="https://img.shields.io/badge/Infra-CI%2FCD-00C853.svg?style=flat-square" alt="Infra CI/CD"/>
         </p>
         <p>
-          Production multi-stage DevSecOps pipeline template with GitLeaks secret scanning, Checkov IaC compliance, Trivy CVE scanning, Infracost budgeting, PIM gated approvals, and automated failure rollbacks.
+          Multi-stage Infrastructure DevSecOps pipeline with GitLeaks, Checkov, Trivy, Infracost diffs, PIM approvals, and immutable <code>tfplan</code> binary artifact locking.
         </p>
         <p align="center">
-          <a href="https://github.com/Mehdi-Suleman-DevOps/devsecops-enterprise-pipeline"><b>View Pipeline Template ➔</b></a>
+          <a href="https://github.com/Mehdi-Suleman-DevOps/devsecops-enterprise-pipeline"><b>View Infra Pipeline ➔</b></a>
+        </p>
+      </td>
+      <td width="33%" valign="top">
+        <h3 align="center">🚀 <a href="https://github.com/Mehdi-Suleman-DevOps/devsecops-application-pipeline">devsecops-application-pipeline</a></h3>
+        <p align="center">
+          <img src="https://img.shields.io/badge/App-DevSecOps-0078D7.svg?style=flat-square&logo=docker&logoColor=white" alt="App DevSecOps"/>
+          <img src="https://img.shields.io/badge/Security-SBOM%20%7C%20Cosign-FF6F00.svg?style=flat-square" alt="SBOM Cosign"/>
+        </p>
+        <p>
+          Cloud-native Application DevSecOps pipeline with unit tests, SAST/SCA, multi-stage Docker builds, Syft SBOM generation, Cosign signing, ACR OCI Helm charts, and Canary rollouts.
+        </p>
+        <p align="center">
+          <a href="https://github.com/Mehdi-Suleman-DevOps/devsecops-application-pipeline"><b>View App Pipeline ➔</b></a>
         </p>
       </td>
     </tr>
