@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17"/>
+      <stop offset="100%" stop-color="#0e1726"/>
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#151e30"/>
+      <stop offset="100%" stop-color="#0d1422"/>
+    </linearGradient>
+
+    <!-- Laser Line Gradient -->
+    <linearGradient id="laserGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes flowLine {
+      from { stroke-dashoffset: 40; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    @keyframes packetMove {
+      0% { cx: 160; }
+      100% { cx: 720; }
+    }
+    .flow-path {
+      stroke: url(#laserGrad);
+      stroke-width: 3;
+      stroke-dasharray: 8, 6;
+      animation: flowLine 1.2s linear infinite;
+    }
+    .animated-packet {
+      fill: #00d2ff;
+      filter: url(#glowCyan);
+      animation: packetMove 4s ease-in-out infinite;
+    }
+    .status-badge {
+      animation: pulseGlow 2.5s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .text-title { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .text-subtitle { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 11px; fill: #94a3b8; }
+    .text-code { font-family: 'Fira Code', monospace; font-size: 11px; fill: #38bdf8; }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="880" height="340" rx="14" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Top Title Bar -->
+  <rect x="0" y="0" width="880" height="46" rx="14" fill="#0d1527"/>
+  <rect x="0" y="32" width="880" height="14" fill="#0d1527"/>
+  <line x1="0" y1="46" x2="880" y2="46" stroke="#1e293b" stroke-width="1.5"/>
+  
+  <circle cx="28" cy="23" r="5" fill="#ef4444"/>
+  <circle cx="44" cy="23" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="23" r="5" fill="#10b981"/>
+  
+  <text x="80" y="27" class="text-title" font-size="13" fill="#cbd5e1">ENTERPRISE DEVSECOPS SHIFT-LEFT CI/CD PIPELINE</text>
+  <rect x="730" y="14" width="125" height="20" rx="10" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <circle cx="742" cy="24" r="3.5" fill="#10b981" filter="url(#glowGreen)"/>
+  <text x="752" y="28" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="600" fill="#a7f3d0">ZERO TRUST ACTIVE</text>
+
+  <!-- Flow Connector Track -->
+  <line x1="160" y1="180" x2="720" y2="180" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+  <line x1="160" y1="180" x2="720" y2="180" class="flow-path" stroke-linecap="round"/>
+
+  <!-- Moving Data Packet -->
+  <circle cy="180" r="5.5" class="animated-packet"/>
+
+  <!-- ================= CARD 1: SOURCE ================= -->
+  <g transform="translate(30, 80)">
+    <rect width="145" height="200" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
+    <rect x="0" y="0" width="145" height="32" rx="10" fill="#1e293b"/>
+    <rect x="0" y="22" width="145" height="10" fill="#1e293b"/>
+    <text x="12" y="21" class="text-title" font-size="12" fill="#38bdf8">01. SOURCE</text>
+    <circle cx="128" cy="16" r="4" fill="#38bdf8"/>
+    
+    <text x="12" y="55" class="text-subtitle" font-weight="600" fill="#e2e8f0">• Trunk-Based Git</text>
+    <text x="12" y="73" class="text-subtitle">• Short-Lived Feature</text>
+    <text x="12" y="91" class="text-subtitle">• Mandatory PR</text>
+    <text x="12" y="109" class="text-subtitle">• CODEOWNERS File</text>
+    <text x="12" y="127" class="text-subtitle">• No Direct Push</text>
+
+    <!-- Card Badge -->
+    <rect x="12" y="152" width="121" height="24" rx="6" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+    <text x="22" y="168" class="text-code">branch: main</text>
+  </g>
+
+  <!-- ================= CARD 2: SECURITY GATES ================= -->
+  <g transform="translate(198, 80)">
+    <rect width="155" height="200" rx="10" fill="url(#cardGrad)" stroke="#0284c7" stroke-width="1.5" filter="url(#glowCyan)"/>
+    <rect width="155" height="200" rx="10" fill="url(#cardGrad)" stroke="#0284c7" stroke-width="1.5"/>
+    <rect x="0" y="0" width="155" height="32" rx="10" fill="#0369a1"/>
+    <rect x="0" y="22" width="155" height="10" fill="#0369a1"/>
+    <text x="12" y="21" class="text-title" font-size="12" fill="#ffffff">02. SHIFT-LEFT SCAN</text>
+    <circle cx="138" cy="16" r="4" fill="#a7f3d0"/>
+
+    <text x="12" y="55" class="text-subtitle" font-weight="600" fill="#e2e8f0">• GitLeaks (Secrets)</text>
+    <text x="12" y="73" class="text-subtitle">• Checkov (IaC Rules)</text>
+    <text x="12" y="91" class="text-subtitle">• Trivy (CVE Scanner)</text>
+    <text x="12" y="109" class="text-subtitle">• tflint &amp; fmt check</text>
+    <text x="12" y="127" class="text-subtitle">• Unit Validations</text>
+
+    <!-- Card Badge -->
+    <rect x="12" y="152" width="131" height="24" rx="6" fill="#022c22" stroke="#10b981" stroke-width="1" class="status-badge"/>
+    <text x="26" y="168" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="700" fill="#34d399">✔ 0 CRITICAL CVE</text>
+  </g>
+
+  <!-- ================= CARD 3: PLAN & FINOPS ================= -->
+  <g transform="translate(376, 80)">
+    <rect width="150" height="200" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
+    <rect x="0" y="0" width="150" height="32" rx="10" fill="#1e293b"/>
+    <rect x="0" y="22" width="150" height="10" fill="#1e293b"/>
+    <text x="12" y="21" class="text-title" font-size="12" fill="#fbbf24">03. PLAN &amp; FINOPS</text>
+    <circle cx="134" cy="16" r="4" fill="#fbbf24"/>
+
+    <text x="12" y="55" class="text-subtitle" font-weight="600" fill="#e2e8f0">• Terraform Plan</text>
+    <text x="12" y="73" class="text-subtitle">• Infracost Diff to PR</text>
+    <text x="12" y="91" class="text-subtitle">• Drift Detection</text>
+    <text x="12" y="109" class="text-subtitle">• Plan Artifact Save</text>
+    <text x="12" y="127" class="text-subtitle">• Policy Check (OPA)</text>
+
+    <!-- Card Badge -->
+    <rect x="12" y="152" width="126" height="24" rx="6" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+    <text x="22" y="168" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="600" fill="#fde68a">💰 COST ESTIMATED</text>
+  </g>
+
+  <!-- ================= CARD 4: PRODUCTION GATE ================= -->
+  <g transform="translate(548, 80)">
+    <rect width="145" height="200" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2"/>
+    <rect x="0" y="0" width="145" height="32" rx="10" fill="#1e293b"/>
+    <rect x="0" y="22" width="145" height="10" fill="#1e293b"/>
+    <text x="12" y="21" class="text-title" font-size="12" fill="#c084fc">04. APPROVAL</text>
+    <circle cx="128" cy="16" r="4" fill="#c084fc"/>
+
+    <text x="12" y="55" class="text-subtitle" font-weight="600" fill="#e2e8f0">• 2 Senior Approvals</text>
+    <text x="12" y="73" class="text-subtitle">• Entra ID PIM JIT</text>
+    <text x="12" y="91" class="text-subtitle">• Multi-Stage Signoff</text>
+    <text x="12" y="109" class="text-subtitle">• Audited Approvals</text>
+    <text x="12" y="127" class="text-subtitle">• Deployment Lock</text>
+
+    <!-- Card Badge -->
+    <rect x="12" y="152" width="121" height="24" rx="6" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+    <text x="24" y="168" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#e9d5ff">🔐 PIM ELEVATED</text>
+  </g>
+
+  <!-- ================= CARD 5: SECURE APPLY ================= -->
+  <g transform="translate(714, 80)">
+    <rect width="140" height="200" rx="10" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.5" filter="url(#glowGreen)"/>
+    <rect width="140" height="200" rx="10" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="0" y="0" width="140" height="32" rx="10" fill="#065f46"/>
+    <rect x="0" y="22" width="140" height="10" fill="#065f46"/>
+    <text x="12" y="21" class="text-title" font-size="12" fill="#ffffff">05. DEPLOY &amp; OPS</text>
+    <circle cx="124" cy="16" r="4" fill="#34d399"/>
+
+    <text x="12" y="55" class="text-subtitle" font-weight="600" fill="#e2e8f0">• Blob Lease Lock</text>
+    <text x="12" y="73" class="text-subtitle">• Terraform Apply</text>
+    <text x="12" y="91" class="text-subtitle">• Synthetic Probes</text>
+    <text x="12" y="109" class="text-subtitle">• Auto-Rollback Plan</text>
+    <text x="12" y="127" class="text-subtitle">• AIOps Ingestion</text>
+
+    <!-- Card Badge -->
+    <rect x="12" y="152" width="116" height="24" rx="6" fill="#022c22" stroke="#10b981" stroke-width="1" class="status-badge"/>
+    <text x="20" y="168" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="700" fill="#6ee7b7">🚀 PROD VERIFIED</text>
+  </g>
+
+  <!-- Bottom Interactive Footer -->
+  <text x="30" y="312" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748b">
+    ARCHITECTURE: <tspan fill="#38bdf8">100% Shift-Left Security</tspan> • <tspan fill="#10b981">Immutable IaC State</tspan> • <tspan fill="#c084fc">JIT Entra ID PIM</tspan> • <tspan fill="#fbbf24">FinOps Infracost</tspan>
+  </text>
+</svg>
+

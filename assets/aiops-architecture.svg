@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13"/>
+      <stop offset="100%" stop-color="#0c1222"/>
+    </linearGradient>
+
+    <linearGradient id="aiCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141c2e"/>
+      <stop offset="100%" stop-color="#0b111e"/>
+    </linearGradient>
+
+    <linearGradient id="synapseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+
+    <filter id="aiGlowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes flowSynapse {
+      from { stroke-dashoffset: 48; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseAi {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+    @keyframes neuralPulse {
+      0% { cx: 280; }
+      50% { cx: 440; }
+      100% { cx: 600; }
+    }
+    .synapse-track {
+      stroke: url(#synapseGrad);
+      stroke-width: 3;
+      stroke-dasharray: 8, 8;
+      animation: flowSynapse 1.4s linear infinite;
+    }
+    .neural-particle {
+      fill: #c084fc;
+      filter: url(#aiGlowPurple);
+      animation: neuralPulse 3s ease-in-out infinite alternate;
+    }
+    .pulse-badge {
+      animation: pulseAi 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .text-head { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .text-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; fill: #cbd5e1; }
+    .text-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 10.5px; fill: #94a3b8; }
+  </style>
+
+  <!-- Canvas Border -->
+  <rect width="880" height="340" rx="14" fill="url(#aiBg)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Top Title Bar -->
+  <rect x="0" y="0" width="880" height="46" rx="14" fill="#0d1424"/>
+  <rect x="0" y="32" width="880" height="14" fill="#0d1424"/>
+  <line x1="0" y1="46" x2="880" y2="46" stroke="#1e293b" stroke-width="1.5"/>
+
+  <circle cx="28" cy="23" r="5" fill="#ef4444"/>
+  <circle cx="44" cy="23" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="23" r="5" fill="#10b981"/>
+
+  <text x="80" y="27" class="text-head" font-size="13" fill="#cbd5e1">ENTERPRISE AIOPS: AUTONOMOUS INCIDENT &amp; SRE COGNITIVE LIFECYCLE</text>
+  <rect x="715" y="14" width="140" height="20" rx="10" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+  <text x="726" y="28" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="700" fill="#e9d5ff">🤖 AIOps ENGINE ONLINE</text>
+
+  <!-- Synapse Connectors -->
+  <line x1="280" y1="180" x2="600" y2="180" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+  <line x1="280" y1="180" x2="600" y2="180" class="synapse-track" stroke-linecap="round"/>
+  <circle cy="180" r="6" class="neural-particle"/>
+
+  <!-- ================= PILLAR 1: TELEMETRY STREAM ================= -->
+  <g transform="translate(30, 75)">
+    <rect width="250" height="225" rx="12" fill="url(#aiCardGrad)" stroke="#0284c7" stroke-width="1.2"/>
+    <rect x="0" y="0" width="250" height="34" rx="12" fill="#0369a1"/>
+    <rect x="0" y="24" width="250" height="10" fill="#0369a1"/>
+    <text x="14" y="22" class="text-head" font-size="12" fill="#ffffff">01. TELEMETRY &amp; METRIC INGEST</text>
+
+    <!-- Content Items -->
+    <g transform="translate(14, 50)">
+      <rect x="0" y="0" width="222" height="34" rx="6" fill="#0f172a" stroke="#1e293b"/>
+      <text x="10" y="16" class="text-body" font-weight="600">• K8s Pod Crash Events</text>
+      <text x="10" y="28" class="text-sub">CrashLoopBackOff, OOMKills, Failed Ingress</text>
+
+      <rect x="0" y="42" width="222" height="34" rx="6" fill="#0f172a" stroke="#1e293b"/>
+      <text x="10" y="58" class="text-body" font-weight="600">• Azure Log Analytics (KQL)</text>
+      <text x="10" y="70" class="text-sub">Real-time structured telemetry &amp; trace queries</text>
+
+      <rect x="0" y="84" width="222" height="34" rx="6" fill="#0f172a" stroke="#1e293b"/>
+      <text x="10" y="100" class="text-body" font-weight="600">• Prometheus Anomaly Detection</text>
+      <text x="10" y="112" class="text-sub">CPU/Memory drift &amp; latency surge metrics</text>
+
+      <rect x="0" y="128" width="222" height="24" rx="6" fill="#082f49" stroke="#0ea5e9" stroke-width="1"/>
+      <text x="24" y="144" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="700" fill="#7dd3fc">📡 LIVE STREAMING TO AI</text>
+    </g>
+  </g>
+
+  <!-- ================= PILLAR 2: COGNITIVE AI REASONING ================= -->
+  <g transform="translate(315, 75)">
+    <rect width="250" height="225" rx="12" fill="url(#aiCardGrad)" stroke="#a855f7" stroke-width="1.8" filter="url(#aiGlowPurple)"/>
+    <rect width="250" height="225" rx="12" fill="url(#aiCardGrad)" stroke="#a855f7" stroke-width="1.8"/>
+    <rect x="0" y="0" width="250" height="34" rx="12" fill="#6b21a8"/>
+    <rect x="0" y="24" width="250" height="10" fill="#6b21a8"/>
+    <text x="14" y="22" class="text-head" font-size="12" fill="#ffffff">02. COGNITIVE AI INFERENCE</text>
+
+    <!-- Content Items -->
+    <g transform="translate(14, 50)">
+      <rect x="0" y="0" width="222" height="34" rx="6" fill="#1e1035" stroke="#4c1d95"/>
+      <text x="10" y="16" class="text-body" font-weight="600">• Azure OpenAI (GPT-4o) RCA</text>
+      <text x="10" y="28" class="text-sub">Multi-tier log correlation &amp; root cause ID</text>
+
+      <rect x="0" y="42" width="222" height="34" rx="6" fill="#1e1035" stroke="#4c1d95"/>
+      <text x="10" y="58" class="text-body" font-weight="600">• K8sGPT In-Cluster SRE</text>
+      <text x="10" y="70" class="text-sub">Translates cryptic errors into human actions</text>
+
+      <rect x="0" y="84" width="222" height="34" rx="6" fill="#1e1035" stroke="#4c1d95"/>
+      <text x="10" y="100" class="text-body" font-weight="600">• Vector DB RAG for Playbooks</text>
+      <text x="10" y="112" class="text-sub">Semantic search over internal disaster recovery</text>
+
+      <rect x="0" y="128" width="222" height="24" rx="6" fill="#3b0764" stroke="#c084fc" stroke-width="1" class="pulse-badge"/>
+      <text x="24" y="144" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="700" fill="#f3e8ff">🧠 REAL-TIME AI INFERENCE</text>
+    </g>
+  </g>
+
+  <!-- ================= PILLAR 3: AUTONOMOUS REMEDIATION ================= -->
+  <g transform="translate(600, 75)">
+    <rect width="250" height="225" rx="12" fill="url(#aiCardGrad)" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="0" y="0" width="250" height="34" rx="12" fill="#047857"/>
+    <rect x="0" y="24" width="250" height="10" fill="#047857"/>
+    <text x="14" y="22" class="text-head" font-size="12" fill="#ffffff">03. AUTONOMOUS ACTIONS</text>
+
+    <!-- Content Items -->
+    <g transform="translate(14, 50)">
+      <rect x="0" y="0" width="222" height="34" rx="6" fill="#0f172a" stroke="#1e293b"/>
+      <text x="10" y="16" class="text-body" font-weight="600">• Instant War Room RCA</text>
+      <text x="10" y="28" class="text-sub">Auto-postmortem sent to Slack &amp; Teams &lt;30s</text>
+
+      <rect x="0" y="42" width="222" height="34" rx="6" fill="#0f172a" stroke="#1e293b"/>
+      <text x="10" y="58" class="text-body" font-weight="600">• Self-Healing Automation</text>
+      <text x="10" y="70" class="text-sub">Auto-restarts, worker node drain &amp; recycling</text>
+
+      <rect x="0" y="84" width="222" height="34" rx="6" fill="#0f172a" stroke="#1e293b"/>
+      <text x="10" y="100" class="text-body" font-weight="600">• Predictive Autoscaling</text>
+      <text x="10" y="112" class="text-sub">Proactively scales AKS prior to traffic spikes</text>
+
+      <rect x="0" y="128" width="222" height="24" rx="6" fill="#022c22" stroke="#10b981" stroke-width="1"/>
+      <text x="24" y="144" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="700" fill="#6ee7b7">⚡ &lt; 15m MTTR RESOLUTION</text>
+    </g>
+  </g>
+
+  <!-- Bottom Details -->
+  <text x="30" y="318" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748b">
+    CAPABILITY: <tspan fill="#38bdf8">K8sGPT Cluster Triage</tspan> • <tspan fill="#c084fc">Azure OpenAI Root-Cause Analysis</tspan> • <tspan fill="#10b981">Self-Healing Automation</tspan> • <tspan fill="#fbbf24">Predictive SRE</tspan>
+  </text>
+</svg>
+

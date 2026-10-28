@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cafBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16"/>
+      <stop offset="100%" stop-color="#0d1424"/>
+    </linearGradient>
+
+    <linearGradient id="rootGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <linearGradient id="treeLineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <filter id="badgeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes lineFlow {
+      from { stroke-dashoffset: 32; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseCard {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .tree-flow {
+      stroke: url(#treeLineGrad);
+      stroke-width: 2.5;
+      stroke-dasharray: 6, 6;
+      animation: lineFlow 1.5s linear infinite;
+    }
+    .tree-solid {
+      stroke: #334155;
+      stroke-width: 2.5;
+    }
+    .live-badge {
+      animation: pulseCard 2.5s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .txt-bold { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .txt-body { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; fill: #cbd5e1; }
+    .txt-muted { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 10px; fill: #94a3b8; }
+  </style>
+
+  <!-- Background -->
+  <rect width="880" height="340" rx="14" fill="url(#cafBg)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Top Title Bar -->
+  <rect x="0" y="0" width="880" height="44" rx="14" fill="#0d1424"/>
+  <rect x="0" y="30" width="880" height="14" fill="#0d1424"/>
+  <line x1="0" y1="44" x2="880" y2="44" stroke="#1e293b" stroke-width="1.5"/>
+
+  <circle cx="28" cy="22" r="5" fill="#ef4444"/>
+  <circle cx="44" cy="22" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="22" r="5" fill="#10b981"/>
+
+  <text x="80" y="26" class="txt-bold" font-size="13" fill="#cbd5e1">MICROSOFT CLOUD ADOPTION FRAMEWORK (CAF) MANAGEMENT HIERARCHY</text>
+  <rect x="690" y="12" width="165" height="20" rx="10" fill="#064e3b" stroke="#059669" stroke-width="1" class="live-badge"/>
+  <text x="702" y="26" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="700" fill="#a7f3d0">🛡️ CIS BENCHMARK ACTIVE</text>
+
+  <!-- ================= ROOT LEVEL ================= -->
+  <g transform="translate(320, 58)">
+    <rect width="240" height="44" rx="8" fill="url(#rootGrad)" stroke="#38bdf8" stroke-width="1.2" filter="url(#badgeGlow)"/>
+    <rect width="240" height="44" rx="8" fill="url(#rootGrad)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="24" y="20" class="txt-bold" font-size="11.5" fill="#ffffff">Microsoft Entra ID Tenant</text>
+    <text x="24" y="35" class="txt-muted" fill="#e0f2fe">Tenant Root Group (Root Policy Engine)</text>
+  </g>
+
+  <!-- Tree Connectors -->
+  <!-- Stem down from Root -->
+  <line x1="440" y1="102" x2="440" y2="128" class="tree-solid"/>
+  <line x1="440" y1="102" x2="440" y2="128" class="tree-flow"/>
+
+  <!-- Horizontal Branch -->
+  <line x1="160" y1="128" x2="720" y2="128" class="tree-solid"/>
+  <line x1="160" y1="128" x2="720" y2="128" class="tree-flow"/>
+
+  <!-- Drops to Level 2 -->
+  <line x1="160" y1="128" x2="160" y2="150" class="tree-solid"/>
+  <line x1="160" y1="128" x2="160" y2="150" class="tree-flow"/>
+
+  <line x1="440" y1="128" x2="440" y2="150" class="tree-solid"/>
+  <line x1="440" y1="128" x2="440" y2="150" class="tree-flow"/>
+
+  <line x1="720" y1="128" x2="720" y2="150" class="tree-solid"/>
+  <line x1="720" y1="128" x2="720" y2="150" class="tree-flow"/>
+
+  <!-- ================= LEVEL 2: PLATFORM MANAGEMENT GROUP ================= -->
+  <g transform="translate(35, 150)">
+    <rect width="250" height="150" rx="10" fill="#0f172a" stroke="#0284c7" stroke-width="1.2"/>
+    <rect x="0" y="0" width="250" height="28" rx="10" fill="#0369a1"/>
+    <rect x="0" y="18" width="250" height="10" fill="#0369a1"/>
+    <text x="12" y="19" class="txt-bold" font-size="11.5" fill="#ffffff">PLATFORM MANAGEMENT GROUP</text>
+
+    <text x="12" y="48" class="txt-body" font-weight="600">• Identity Subscription</text>
+    <text x="24" y="62" class="txt-muted">Domain Controllers, DNS, Entra Connect</text>
+
+    <text x="12" y="80" class="txt-body" font-weight="600">• Management Subscription</text>
+    <text x="24" y="94" class="txt-muted">Log Analytics, Sentinel, Azure Monitor</text>
+
+    <text x="12" y="112" class="txt-body" font-weight="600">• Connectivity Subscription</text>
+    <text x="24" y="126" class="txt-muted">Hub VNet, Azure Firewall, Gateways</text>
+  </g>
+
+  <!-- ================= LEVEL 2: LANDING ZONES (WORKLOADS) ================= -->
+  <g transform="translate(315, 150)">
+    <rect width="250" height="150" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5" filter="url(#badgeGlow)"/>
+    <rect width="250" height="150" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="0" y="0" width="250" height="28" rx="10" fill="#065f46"/>
+    <rect x="0" y="18" width="250" height="10" fill="#065f46"/>
+    <text x="12" y="19" class="txt-bold" font-size="11.5" fill="#ffffff">LANDING ZONES (WORKLOADS)</text>
+
+    <text x="12" y="48" class="txt-body" font-weight="600">• Corp (Internal Workloads)</text>
+    <text x="24" y="62" class="txt-muted">Private IPs only, zero public exposure</text>
+
+    <text x="12" y="80" class="txt-body" font-weight="600">• Online (Public Facing / DMZ)</text>
+    <text x="24" y="94" class="txt-muted">App Gateway with WAF, Front Door</text>
+
+    <text x="12" y="112" class="txt-body" font-weight="600">• Environment Isolation</text>
+    <text x="24" y="126" class="txt-muted">Dev, UAT, &amp; Prod Dedicated Subscriptions</text>
+  </g>
+
+  <!-- ================= LEVEL 2: SANDBOX & DECOMMISSIONED ================= -->
+  <g transform="translate(595, 150)">
+    <rect width="250" height="150" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="1.2"/>
+    <rect x="0" y="0" width="250" height="28" rx="10" fill="#334155"/>
+    <rect x="0" y="18" width="250" height="10" fill="#334155"/>
+    <text x="12" y="19" class="txt-bold" font-size="11.5" fill="#ffffff">SANDBOX &amp; DECOMMISSIONED</text>
+
+    <text x="12" y="48" class="txt-body" font-weight="600">• Sandbox Management Group</text>
+    <text x="24" y="62" class="txt-muted">Isolated R&amp;D with strict budget caps</text>
+
+    <text x="12" y="80" class="txt-body" font-weight="600">• Decommissioned MG</text>
+    <text x="24" y="94" class="txt-muted">Expiring workloads pending teardown</text>
+
+    <text x="12" y="112" class="txt-body" font-weight="600">• Blast Radius Isolation</text>
+    <text x="24" y="126" class="txt-muted">Zero access to enterprise corporate data</text>
+  </g>
+
+  <!-- Bottom Legend -->
+  <text x="35" y="322" font-family="'Segoe UI', sans-serif" font-size="10.5" fill="#64748b">
+    GOVERNANCE: <tspan fill="#38bdf8">Least Privilege RBAC</tspan> • <tspan fill="#10b981">Entra PIM JIT Access</tspan> • <tspan fill="#fbbf24">Azure Policy Audit &amp; Deny Guardrails</tspan>
+  </text>
+</svg>
+
